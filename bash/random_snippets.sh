@@ -43,3 +43,16 @@ else
     echo "other, uname:"
     echo "$uname_out"
 fi
+
+
+## count number of files in a dir
+ls /net/datasets/raw_originals/201912190759_NvmhiQ/output/vb100/vb100_video/American_Rock_Wren  | wc -l
+
+## count the number of files in all subdirs (where vb100_video contains only subdirs, no regular files)
+let a=0
+for dir in $(ls -d /net/datasets/raw_originals/201912190759_NvmhiQ/output/vb100/vb100_video/*)
+do
+    num_files=$(ls $dir | wc -l)
+    let "a = $a + $num_files"
+done
+echo $a # the number of files accumulated across all subdirs
