@@ -56,3 +56,13 @@ do
     let "a = $a + $num_files"
 done
 echo $a # the number of files accumulated across all subdirs
+
+
+## split a string on a delimiter
+# https://stackoverflow.com/a/14314206
+echo "bla@some.com/john@home.com" | awk -F'/' '{print $1,$2}'
+# output: bla@some.com john@home.com
+echo "macos/Default (OSX).sublime-keymap" | awk -F '/' '{print $2}'
+# output: Default (OSX).sublime-keymap
+
+
