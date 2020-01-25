@@ -66,3 +66,10 @@ echo "macos/Default (OSX).sublime-keymap" | awk -F '/' '{print $2}'
 # output: Default (OSX).sublime-keymap
 
 
+## Boolean var for if control flow
+# from https://stackoverflow.com/a/2953673/4292910
+the_world_is_flat=true
+# ...do something interesting...
+if [ "$the_world_is_flat" = true ] ; then
+    echo 'Be careful not to fall off!'
+fi
