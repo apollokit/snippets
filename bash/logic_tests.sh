@@ -6,3 +6,8 @@ if [ ! -z "$var" ]; then
 else
     echo "doesnt exist"
 fi
+
+#  test if file /sys/module/hid_apple/parameters/fnmode only has "1" in it
+if [ "$(cat /sys/module/hid_apple/parameters/fnmode)" == "1" ]; then
+    echo 'hi'
+fi
