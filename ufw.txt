@@ -1,0 +1,2 @@
+# allow ssh (with tcp) from addresses 192.168.1 to 192.168.255 to this machine
+sudo ufw allow from 192.168.1.0/24 to any port 22 proto tcp

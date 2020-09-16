@@ -2,7 +2,7 @@
 sudo useradd -s /bin/bash -m user
 
 # add user to group
-sudo usermod -d -G group user
+sudo usermod -a -G group user
 
 # remove user from group
 sudo gpasswd -d user group
