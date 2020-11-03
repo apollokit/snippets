@@ -1,6 +1,8 @@
 function usage {
     # arg_one is required, arg two is optional
     echo "$0 arg_one <arg_two>"
+    # Note on this: exit 1 can be used either in a function or the script. 
+    # Will only exit the host terminal if the script is used with "source" call
     exit 1
 }
 
