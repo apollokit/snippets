@@ -1,5 +1,17 @@
 import numpy as np
 
+## imread
+grey_img = cv2.imread('/home/img/python.png', cv2.IMREAD_GRAYSCALE)
+
+## imwrite
+
+# when using imwrite, it's important to know that it should be written out on a
+# 255 scale
+depth_clipped = np.where(depth <= 1., depth, 1.)
+cv2.imwrite(f'./images/{image_name}_depth.png', depth_clipped*255)
+
+## other stuff
+
 def show_cv2_image(image: np.ndarray):
     """Use cv2 imshow to show an image
     
