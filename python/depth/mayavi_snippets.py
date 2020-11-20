@@ -1,3 +1,6 @@
+# other useful links:
+# - displaying the mesh on a map plot lib plot: https://stackoverflow.com/a/29430323/4292910
+
 import cv2
 import numpy as np
 
