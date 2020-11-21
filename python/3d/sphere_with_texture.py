@@ -2,16 +2,16 @@
 # image from: https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg
 
 from mayavi import mlab
-from tvtk.api import tvtk # python wrappers for the C++ vtk ecosystem
+from tvtk.api import tvtk as tvtk_api # python wrappers for the C++ vtk ecosystem
 
 def auto_sphere(image_file):
     # create a figure window (and scene)
     fig = mlab.figure(size=(600, 600))
 
     # load and map the texture
-    img = tvtk.JPEGReader()
+    img = tvtk_api.JPEGReader()
     img.file_name = image_file
-    texture = tvtk.Texture(input_connection=img.output_port, interpolate=1)
+    texture = tvtk_api.Texture(input_connection=img.output_port, interpolate=1)
     # (interpolate for a less raster appearance when zoomed in)
 
     # use a TexturedSphereSource, a.k.a. getting our hands dirty
@@ -19,16 +19,17 @@ def auto_sphere(image_file):
     Nrad = 180
 
     # create the sphere source with a given radius and angular resolution
-    sphere = tvtk.TexturedSphereSource(radius=R, theta_resolution=Nrad,
+    sphere = tvtk_api.TexturedSphereSource(radius=R, theta_resolution=Nrad,
                                        phi_resolution=Nrad)
 
     # assemble rest of the pipeline, assign texture    
-    sphere_mapper = tvtk.PolyDataMapper(input_connection=sphere.output_port)
-    sphere_actor = tvtk.Actor(mapper=sphere_mapper, texture=texture)
+    sphere_mapper = tvtk_api.PolyDataMapper(input_connection=sphere.output_port)
+    sphere_actor = tvtk_api.Actor(mapper=sphere_mapper, texture=texture)
     fig.scene.add_actor(sphere_actor)
 
 
 if __name__ == "__main__":
     image_file = 'blue_marble_spherical.jpg'
     auto_sphere(image_file)
-    mlab.show()
+    # mlab.show()
+    mlab.savefig('yo.obj')
