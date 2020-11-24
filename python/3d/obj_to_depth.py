@@ -63,17 +63,6 @@ for x_coor, y_coor, z_val in zip(x, y, z):
 
 depth = fill_depth_holes(depth)
 
-# y_sort_indcs = np.argsort(y)
-# x_sorted = x[y_sort_indcs]
-# y_sorted = y[y_sort_indcs]
-# z_sorted = z[y_sort_indcs]
-
-# split_indcs = np.where(np.diff(y_sorted))[0] + 1
-# x_split = np.split(x_sorted, split_indcs)
-# y_split = np.split(y_sorted, split_indcs)
-# z_split = np.split(z_sorted, split_indcs)
-
-
 # see: http://docs.enthought.com/mayavi/mayavi/auto/mlab_helper_functions.html?highlight=contour_surf#mesh
 # mlab.points3d(x, y, z)
 
