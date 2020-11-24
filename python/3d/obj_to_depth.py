@@ -63,6 +63,8 @@ for x_coor, y_coor, z_val in zip(x, y, z):
 
 depth = fill_depth_holes(depth)
 
+np.save('depth.npy', depth)
+
 # see: http://docs.enthought.com/mayavi/mayavi/auto/mlab_helper_functions.html?highlight=contour_surf#mesh
 # mlab.points3d(x, y, z)
 
@@ -77,3 +79,4 @@ mlab.figure(size=(1280,720))
 mlab.mesh(-1*x_m, y_m, depth)
 
 mlab.show()    
+
