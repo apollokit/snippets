@@ -1,3 +1,5 @@
+set -ex
+
 function usage {
     # arg_one is required, arg two is optional
     echo "$0 arg_one <arg_two>"

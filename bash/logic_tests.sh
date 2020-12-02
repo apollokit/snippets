@@ -11,3 +11,9 @@ fi
 if [ "$(cat /sys/module/hid_apple/parameters/fnmode)" == "1" ]; then
     echo 'hi'
 fi
+
+# only install if it doesn't exist
+script_file=$(which markdown-enum)
+[ "$script_file" == "" ]; then
+    pip install enumerate-markdown
+fi
