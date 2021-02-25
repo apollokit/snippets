@@ -1,6 +1,11 @@
 #!/bin/bash
 set -ex
 
+# change into the directory of this file
+DIR=$(dirname $0)
+
+pushd $DIR
+
 SCRIPT_DIR=$(dirname $(realpath $0))
 python_version=3.7
 # python_version=3.8
@@ -19,3 +24,5 @@ fi
 
 # Now install requirements.
 $virtualenv_dir/bin/pip install -r "$SCRIPT_DIR/requirements.txt"
+
+popd

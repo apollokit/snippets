@@ -1,0 +1,1 @@
+see https://tsdoc.org/play for examples
