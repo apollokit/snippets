@@ -3,10 +3,10 @@ set -ex
 
 # change into the directory of this file
 DIR=$(dirname $0)
+SCRIPT_DIR=$(dirname $(realpath $0))
 
 pushd $DIR
 
-SCRIPT_DIR=$(dirname $(realpath $0))
 python_version=3.7
 # python_version=3.8
 

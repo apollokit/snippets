@@ -6,5 +6,3 @@ import subprocess
 out = subprocess.check_output("ls -l", shell=True)
 
 print(out.decode())
-
-love information I love you too reba
