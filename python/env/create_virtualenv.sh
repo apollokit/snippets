@@ -6,7 +6,7 @@ DIR=$(dirname $0)
 SCRIPT_DIR=$(dirname $(realpath $0))
 
 pushd $DIR
-
+    
 python_version=3.7
 # python_version=3.8
 
