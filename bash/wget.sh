@@ -1,0 +1,1 @@
+wget "https://github.com/search?q=filename%3Akicad_sch" -O out.html
