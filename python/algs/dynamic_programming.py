@@ -16,7 +16,7 @@ def find_max_sum_sublist(lst):
         if curr_max < 0: 
             curr_max = lst[i]
         # seea if extending the sublist helps
-        else:
+        else: 
             curr_max += lst[i]
         # does the current sublist have a greater sum than any we've seen thus
         # far?
@@ -86,7 +86,7 @@ def knap_sack(profits, profits_length, weights, capacity):
 # https://www.educative.io/module/lesson/algorithms-in-python/m77mWZ1lQkr
 def count_ways(n):
     """Calculates the number of ways a staircase of n steps can be climbed,
-    when we can step you either 1,2, or 3 steps at a time
+    when we can step either 1,2, or 3 steps at a time
 
     :param n: Number of stairs
     :return: Number of ways to climb a stair

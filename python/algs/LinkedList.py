@@ -119,6 +119,10 @@ class LinkedList:
         return None
 
     def remove_duplicates(self):
+        # this can be done more efficiently using hashing - create a set of
+        # values in the list first (O(n)), then go through the list and remove
+        # duplicates (O(n))
+
         if self.is_empty():
             return
 

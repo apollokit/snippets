@@ -6,6 +6,8 @@ from LinkedList import LinkedList
 
 
 class Graph:
+    """describes a directed or undirected graph"""
+
     def __init__(self, vertices):
         # Total number of vertices
         self.num_vertices = vertices

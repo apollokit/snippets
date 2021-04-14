@@ -26,8 +26,6 @@ def get_children_vertices(graph, vertex):
 def bfs_traversal(g, source):
     result = ""
     num_of_vertices = g.num_vertices
-    # Write - Your - Code
-    # For the above graph, it should return "01234" or "02143" etc
 
     visited = ""
     expand_queue = MyQueue()

@@ -2,7 +2,7 @@ def three_way_partition(lst):
     """
     A 3-way partitioning algorithm for lists
 
-    A function to solve Dutch National Flag Problem
+    A function to solve "Dutch National Flag" Problem
 
     :param lst: A list of integers 0,1,2
     :return: A list of solved Dutch National Flag Problem
@@ -32,4 +32,4 @@ if __name__ == '__main__':
 
     lst = [2, 0, 0, 1, 2, 1]
 
-    print(dutch_national_flag(lst))
+    print(three_way_partition(lst))

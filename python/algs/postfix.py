@@ -36,7 +36,7 @@ class MyStack:
 def evaluate_post_fix(exp):
     
     # stores the numerical values we will operate on
-    numbers_stack = MyStack()
+    operands_stack = MyStack()
 
     tokens = exp.split(' ')
 
@@ -45,15 +45,15 @@ def evaluate_post_fix(exp):
 
         if token in OPERATORS.keys():
             op_func = OPERATORS[token]
-            right = numbers_stack.pop()
-            left = numbers_stack.pop()
+            right = operands_stack.pop()
+            left = operands_stack.pop()
             result = op_func(left, right)
-            numbers_stack.push(result)
+            operands_stack.push(result)
 
         else:
-            numbers_stack.push(int(token))
+            operands_stack.push(int(token))
 
-    assert numbers_stack.size() == 1
-    return numbers_stack.pop()
+    assert operands_stack.size() == 1
+    return operands_stack.pop()
 
 print(evaluate_post_fix('9 2 1 * - 8 - 4 +'))
