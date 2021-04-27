@@ -20,7 +20,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/test/test_diff_circuit.py",
             "env": {
-                "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/../../../lib:${workspaceFolder}/../../../../../git/KiField"
+                "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/library:${workspaceFolder}/../../../../../git/KiField"
             },
             "cwd": "${workspaceFolder}/test",
         },
