@@ -1,0 +1,6 @@
+{
+    // path to rc file
+    "python.linting.pylintArgs": [
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ]
+}

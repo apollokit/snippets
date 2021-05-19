@@ -36,3 +36,12 @@ df.to_csv(path.join(output_dir, f'{symbol}.dailys.csv'))
 df = pd.read_csv(path.join(output_dir, f'{symbol}.dailys.csv'))
 df['date'] = pd.to_datetime(df['date'])
 df = df.set_index('date')
+
+
+
+# filter a datetime index
+if start:
+    start_loc = ticker_data.index.get_loc(str(start))
+if end:
+    end_loc = ticker_data.index.get_loc(str(end))
+ticker_data = ticker_data[start_loc:end_loc+1]

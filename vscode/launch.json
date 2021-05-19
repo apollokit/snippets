@@ -23,6 +23,7 @@
                 "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/library:${workspaceFolder}/../../../../../git/KiField"
             },
             "cwd": "${workspaceFolder}/test",
+            "args": ["get-repo-content", "--repos_file", "github_repos_1.json"]
         },
         {
             "name": "Python: Current File",

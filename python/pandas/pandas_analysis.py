@@ -41,3 +41,26 @@ df = df.iloc[::-1]
 # 2021-03-28,1837.18798828125,1683.716552734375,1691.26318359375,1819.6849365234375,22796570548.0,1819.6849365234375
 # 2021-03-29,1860.9747314453125,1793.92236328125,1819.46630859375,1846.03369140625,22512781703.0,1846.03369140625
 dedup = ticker_data.groupby(ticker_data.index).last()
+
+
+
+## Example of creating an empty dataframe and then adding columns to it
+
+def percent_return(start_val: float, end_val: float) -> float:
+    """Calculate percent return"""
+    return ((end_val - start_val)/start_val) * 100
+
+def percent_return_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Calculate inter-index percent returns all the columns of a dataframe
+
+    Args:
+        df: the input data frame
+
+    Returns:
+        a new dataframe with percent returns for all of the columns
+    """
+    new_df = pd.DataFrame()
+    for column in df.columns:
+        shifted = df[column].shift(1)
+        new_df[column] = percent_return(shifted, df[column])
+    return new_df
