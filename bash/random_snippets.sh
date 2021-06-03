@@ -33,17 +33,6 @@ done
 cat ../temp/blah.txt | xargs cp -r -t <destination>
 
 
-# check distro
-uname_out=$(uname -a)
-if [[ $uname_out == *"Linux"* ]]; then
-    echo "Linux"
-elif [[ $uname_out == *"Darwin"* ]]; then
-    echo "Darwin (macos)"
-else
-    echo "other, uname:"
-    echo "$uname_out"
-fi
-
 
 ## count number of files in a dir
 ls /net/datasets/raw_originals/201912190759_NvmhiQ/output/vb100/vb100_video/American_Rock_Wren  | wc -l
