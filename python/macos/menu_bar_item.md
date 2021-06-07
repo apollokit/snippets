@@ -1,0 +1,3 @@
+see https://www.pythongasm.com/menubar-app-for-macos-using-python/
+
+have to run in main thread though...

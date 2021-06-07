@@ -1,0 +1,1 @@
+# https://www.mfitzp.com/tutorials/system-tray-mac-menu-bar-applications-pyqt/

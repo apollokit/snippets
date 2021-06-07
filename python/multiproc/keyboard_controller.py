@@ -88,6 +88,9 @@ class KBCntrlrWrapperManager:
         # end the proc
         # todo make sure queue is clear, per https://docs.python.org/3/library/multiprocessing.html#programming-guidelines
         # todo throw error if already joined
+
+        # have to include this! Will otherwise see 
+        #     "FileNotFoundError: [Errno 2] No such file or directory"
         self._kbc_proc.join()
 
 if __name__ == '__main__':

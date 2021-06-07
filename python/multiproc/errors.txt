@@ -1,0 +1,18 @@
+
+Error:
+    "RuntimeError: An attempt has been made to start a new process before the
+    current process has finished its bootstrapping phase.
+    "
+
+Solution:
+    make sure to start the process within a "if __name__ == "__main__":" block
+
+
+
+Error:
+    "File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/multiprocessing/synchronize.py", line 110, in __setstate__
+    self._semlock = _multiprocessing.SemLock._rebuild(*state)
+    FileNotFoundError: [Errno 2] No such file or directory"
+
+Solution:
+    make sure to .join() the process before the end of the program
