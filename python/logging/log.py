@@ -121,6 +121,8 @@ def basicLoggingConfig():
     """This should be called from any top-level CLI files to setup logging
      for everything.
 
+    *Note* need to call this, otherwise logging won't work
+
     This is the function that configures logging formatting for all of our 
     loggers
     """

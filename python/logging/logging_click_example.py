@@ -9,6 +9,8 @@ import logging
 import click
 
 import log as sflog
+# *note* make sure to call this function once at your entry python script to 
+# configure logging
 sflog.basicLoggingConfig()
 
 from logging_import_example import do_stuff
