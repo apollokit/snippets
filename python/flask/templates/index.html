@@ -1,12 +1,12 @@
 <html>
+  
+<title>{{ scenario_name }}</title>
 
-<head>
-  <title>{{ scenario_name }}</title>
-</head>
+{% include 'plots_header.html' %}
 
 <body>
 
-  <h1>Starish Sim Output Plots Explorer </h1>
+  <h1>Plots Explorer </h1>
   <h2>Directory: {{output_dir}}</h2>
 
   <a href="/lroe?dir={{output_dir}}">LROEs</a>
