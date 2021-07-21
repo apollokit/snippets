@@ -1,9 +1,9 @@
-import log as sflog
+import log as tlog
 
 # note: use module name
-logger = sflog.getLogger(__name__)
+logger = tlog.getLogger(__name__)
 # can also set to a desired name, but this is discouraged
-# logger = sflog.getLogger('foo')
+# logger = tlog.getLogger('foo')
 
 def do_stuff():
     logger.info('stuff is done')

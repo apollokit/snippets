@@ -1,16 +1,16 @@
 
 import logging
 
-import log as sflog
+import log as tlog
 # *note* make sure to call this function once at your entry python script to
 # configure logging
-sflog.basicLoggingConfig()
+tlog.basicLoggingConfig()
 
 from logging_import_example import do_stuff
 
 
 # uncomment for log messages to use relative time instead of absolute time
-# sflog.setLogTimeRelative()
+# tlog.setLogTimeRelative()
 
 # here we can manually control the verbosity of logging_import_example
 # module (as desired)
@@ -18,10 +18,10 @@ from logging_import_example import do_stuff
 # test_module_logger.setLevel(logging.DEBUG)
 
 # This names the logger with the name of the current module
-logger = sflog.getLogger(__name__)
+logger = tlog.getLogger(__name__)
 
 # Set logger for both this file and the import to this level
-sflog.setAllLoggerLevels('debug')
+tlog.setAllLoggerLevels('debug')
 
 
 # make sure to use %s style string formatting instead of f-strings (f"blah")

@@ -226,7 +226,7 @@ class Decimator:
     object to determine if the next action should happen or not
 
     Usage:
-        if sflog.decimator.decimate('blah.py 0', keep_every=120):
+        if tlog.decimator.decimate('blah.py 0', keep_every=120):
             logger.info("Hello world!")
     """
 

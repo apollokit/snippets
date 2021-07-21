@@ -1,5 +1,5 @@
-# list all the nameservers for domain vincilab.co
-nslookup -type=NS vincilab.co
+# list all the nameservers for domain v.com
+nslookup -type=NS v.com
 
 # lookup a TXT record
 # from https://docs.aws.amazon.com/ses/latest/DeveloperGuide/troubleshoot-verification.html#troubleshoot-verification-domain-dns

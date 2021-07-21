@@ -11,7 +11,7 @@ def remove_attachment_conf_page(space_name: str, page_name: str, file_name: str,
         session_id: a session id cookie. You can get this by accessing the cookies in the dev 
             tools in your browser after logging into confluence. The name will be "JSESSIONID"
     """
-    url = f'https://confluence.vincilab.co/display/{space_name}/{page_name}'
+    url = f'https://confluence.v.co/display/{space_name}/{page_name}'
     cookies = dict(JSESSIONID=session_id)
     r = requests.get(url, cookies=cookies)
     assert(r.status_code == 200)
@@ -28,7 +28,7 @@ def remove_attachment_conf_page(space_name: str, page_name: str, file_name: str,
 
     file_name.replace(' ', '+')
 
-    url = f'https://confluence.vincilab.co/pages/confirmattachmentremoval.action?pageId={page_id}&fileName={file_name}'
+    url = f'https://confluence.v.co/pages/confirmattachmentremoval.action?pageId={page_id}&fileName={file_name}'
     cookies = dict(JSESSIONID=session_id)
     r = requests.get(url, cookies=cookies)
     assert(r.status_code == 200)
@@ -48,7 +48,7 @@ def remove_attachment_conf_page(space_name: str, page_name: str, file_name: str,
 
     ## Confirm the removal
 
-    url = f'https://confluence.vincilab.co/pages/removeattachment.action?pageId={page_id}&fileName={file_name}'
+    url = f'https://confluence.v.co/pages/removeattachment.action?pageId={page_id}&fileName={file_name}'
 
     r = requests.post(url, data={'atl_token': atl_token}, cookies=cookies)
     assert(r.status_code == 200)

@@ -6,9 +6,6 @@ import flask
 from flask import (
     Flask, redirect, render_template, request, send_file)
 
-# from vinci.db import connection
-
-
 # Create the Flask app.
 app = Flask('Example Server')
     

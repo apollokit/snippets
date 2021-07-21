@@ -6,7 +6,7 @@ import numpy as np
 
 from mayavi import mlab
 
-from vinci.cv.utils import remap_gray_image
+from v.cv.utils import remap_gray_image
 
 depth = np.load('doublestrike.npy')
 depth = remap_gray_image(depth)

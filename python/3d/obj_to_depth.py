@@ -10,7 +10,7 @@ from vtk.numpy_interface import dataset_adapter as dsa
 from depth_utils import fill_depth_holes
 
 # in_file = "airboat.obj"
-in_file="/home/kit/git/vinci/projects/afuera/3d_inpainting/depth/art_impressionist5_mesh_mod.obj"
+in_file="art_impressionist5_mesh_mod.obj"
 
 
 reader = vtk.vtkOBJReader()
@@ -29,7 +29,7 @@ x = points[:, 0]
 y = points[:, 1]
 z = points[:, 2]
 # using the below, you see that x and y are still a plane
-# when using: /home/kit/git/vinci/projects/afuera/3d_inpainting/depth/art_impressionist5_mesh.obj
+# when using: art_impressionist5_mesh.obj
 # z = np.zeros(points.shape[0])
 
 # round these,

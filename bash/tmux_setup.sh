@@ -22,7 +22,7 @@ tmux split-window -v 'cd /home/kit/git/better_dictate/frontend && ./run.sh'
 tmux rename-window base
 
 # could also do...
-# tmux new-window -n ipython #'source ~/vinci/stockbot/source_virtualenv && ipython'
+# tmux new-window -n ipython #'source ~/v/stockbot/source_virtualenv && ipython'
 
 # not necessary
 # tmux select-window -t 0

@@ -8,19 +8,19 @@ import logging
 
 import click
 
-import log as sflog
+import log as tlog
 # *note* make sure to call this function once at your entry python script to 
 # configure logging
-sflog.basicLoggingConfig()
+tlog.basicLoggingConfig()
 
 from logging_import_example import do_stuff
 
 
 # uncomment for log messages to use relative time instead of absolute time
-# sflog.setLogTimeRelative()
+# tlog.setLogTimeRelative()
 
 # This names the logger with the name of the current module
-logger = sflog.getLogger(__name__)
+logger = tlog.getLogger(__name__)
 
 # here we can manually control the verbosity of logging_import_example
 # module (as desired)
@@ -28,10 +28,10 @@ logger = sflog.getLogger(__name__)
 # test_module_logger.setLevel(logging.DEBUG)
 
 # uncomment if a log message prefix is desired
-# sflog.set_log_prefix('Blah: ')
+# tlog.set_log_prefix('Blah: ')
 
 @click.group()
-@sflog.simpleVerbosityOption()
+@tlog.simpleVerbosityOption()
 def cli():
     """This function is necessary for the click CLI to work."""
 
