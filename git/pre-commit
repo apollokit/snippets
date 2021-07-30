@@ -1,0 +1,18 @@
+#!/bin/bash
+# this script runs from the repository base directory
+
+# redirect to null to silence output
+pushd tools/git/hooks > /dev/null
+
+# feel free to add more scripts below, using the `|| failed=1` idiom so that if 
+# any of them doesn't exit cleanly, then the commit will be stopped
+
+failed=0
+python3 check_dist3_integrity.py  || failed=1
+
+popd
+
+# Exit with error if any of the above failed
+if [ "$failed" -ne 0 ] ; then
+    exit 1
+fi
