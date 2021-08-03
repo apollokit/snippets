@@ -26,3 +26,9 @@ def index():
 def get_symbol_plot():
     """Get a path for the plot file for the symbol"""
     return send_file('<path to plot (png, jpg) file>')
+
+
+@app.route('/stats')
+def get_symbol_plot():
+    df = pd.read_csv(path.join(scenario.dir, 'stats.csv'))
+    return render_template(f'statistics.html', table=df.to_html())
