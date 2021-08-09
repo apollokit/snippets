@@ -1,8 +1,18 @@
+"""
+BIG FAT NOTE
+Using ThreadPoolExecutor won't speed up code that isn't i/o bound. If you're trying
+to execute a function with some heavy number-crunching in parallel, ThreadPoolExecutor
+really just does everything serially, because of the GIL. You're not going to get a 
+speed up by using multiple threads. For that purpose, you should look at multiprocessing.Pool
+"""
+
 import threading
 from threading import Lock
 # Queue is thread safe
 # https://docs.python.org/2/library/queue.html#module-Queue
 from queue import Queue, Empty
+
+import concurrent.futures
 
 lock = Lock()
 
@@ -53,7 +63,7 @@ events: Dict[str, threading.Event] = {
 raw_stt_output_q = queue.Queue()
 
 # note that shutdown event can be invoked from keyboard.py
-with ThreadPoolExecutor(max_workers=3) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
     futures = []
     futures.append(executor.submit(
         parser_thread,
