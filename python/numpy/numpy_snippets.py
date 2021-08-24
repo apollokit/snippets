@@ -1,3 +1,5 @@
+import numpy as np
+
 # Make a diagonal matrix
 np.diag([1,1,1])
 # array([[1, 0, 0],
