@@ -12,6 +12,13 @@ df_plot = df['column'].diff()
 df_plot = df_plot.rolling(window = 3).mean()
 
 
+# estimator_converged is a boolean list. Goes False -> True sometimes. Find indices where that transition happens.
+# if have array([..., False, False,  True,  True,  True, ..]), then converge_indcs will have index of first True (plus other transitions)
+converge_indcs = np.nonzero( (pd.Series(estimator_converged).astype(int).diff() == 1).to_numpy() )
+# similar, but only gets first index of true
+indx_virt_tar_initialized = np.argwhere(estimator_converged == True)[:,1]
+
+
 ## latch onto the maximum value over a window of the preceding 30 rows
 # note that min_periods = 1 means that even if we have a window with 29 NaNs
 # in it, we'll still use the one valid data point. This is useful for the

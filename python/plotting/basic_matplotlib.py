@@ -34,3 +34,14 @@ ax[2].grid()
 ax[0].set_title('Position Error - Hill Frame')
 ax[2].set_xlabel('Time (s)')
 plt.show()
+
+
+## reset color cycler
+fig, ax = plt.subplots(num=1, clear=True)
+for imc_ind, mc_indx in enumerate(mc_indcs):
+    # this resets for mc_indx
+    ax.set_prop_cycle(None)
+    for mt in opt_run_times[mc_indx]:
+        horz_indcs = [mt, mt]
+        vert_indcs = [mc_indx - 0.4, mc_indx + 0.4]
+        ax.plot(...)
