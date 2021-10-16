@@ -18,3 +18,5 @@ Search and replace
 
 find: "(.)\n\n(.)"
 replace: "$1 $2"
+
+See image in this dir
