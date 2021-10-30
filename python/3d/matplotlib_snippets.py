@@ -23,3 +23,7 @@ def plot_surface_example():
         facecolors=cm.jet(N),
         linewidth=0, antialiased=False, shade=False)
     plt.show()
+
+
+ax.view_init(elev=90., azim=0.) # view from above
+ax.plot3D(error_hill[first_slice, 1], error_hill[first_slice, 0], error_hill[first_slice, 2], 'k*', label='virt tug')

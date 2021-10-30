@@ -24,5 +24,15 @@ class Thing:
         val = object.__getattribute__(self, name)
         return val
 
+    # annoyingly, we have to implement these two methods for the Thing object to be picklable
+    # they will be found by the val = object.__getattribute__(self, name) in __getattribute__ above
+    def __getstate__(self):
+        return self.__dict__
+    def __setstate__(self, state):
+        # have to add this to the dict before setting to a new thing, because of 
+        # the mechanics of __setattr__ above. Shrug.
+        self.__dict__['locked'] = False
+        self.__dict__ = state
+
     def get_item(self, name: str):
         return self.__dict__[name]
