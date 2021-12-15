@@ -6,6 +6,8 @@ pos_error = np.random.rand((11, 3))
 
 legend_comps = ['r (radial)', 'i (along-track)', 'c (normal)']
 
+
+## Basic-est
 plt.figure(figsize=(10,5))
 plt.plot(times, pos_error)
 plt.xlabel('Time (s)')
@@ -45,3 +47,37 @@ for imc_ind, mc_indx in enumerate(mc_indcs):
         horz_indcs = [mt, mt]
         vert_indcs = [mc_indx - 0.4, mc_indx + 0.4]
         ax.plot(...)
+
+
+## subplots, combined xyz, flat legend
+# plot_1.png
+fig, axs = plt.subplots(4,1)
+ax = axs[0]
+ax.set_title('Omegas')
+ax.plot(t_hist, np.linalg.norm(torque_out, axis=1))
+ax.set_xlabel('time (s)')
+ax.set_ylabel(f'Torque magnitude\n[Nm]')
+ax.grid()
+for icomponent, component in enumerate(['x', 'y', 'z']):
+    ax = axs[icomponent + 1]
+    ax.plot(t_hist, torque_out[:, icomponent])
+    ax.set_xlabel('time (s)')
+    ax.set_ylabel(f'Torque {component}\n[Nm]')
+    ax.grid()
+
+
+## subplots, separate xyz
+# plot_2.png
+fig, axs = plt.subplots(4,1)
+ax = axs[0]
+ax.set_title('Omegas')
+ax.plot(t_hist, np.linalg.norm(omega_errors, axis=1))
+ax.set_xlabel('time (s)')
+ax.set_ylabel(f'omega error magnitude \n[deg/sec]')
+ax.grid()
+for icomponent, component in enumerate(['x', 'y', 'z']):
+    ax = axs[icomponent + 1]
+    ax.plot(t_hist, omega_errors[:, icomponent])
+    ax.set_xlabel('time (s)')
+    ax.set_ylabel(f'omega error {component}\n[deg/sec]')
+    ax.grid()
