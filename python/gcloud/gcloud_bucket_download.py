@@ -2,6 +2,10 @@
 # https://googleapis.dev/python/google-api-core/latest/auth.html
 # export GOOGLE_APPLICATION_CREDENTIALS="/Users/.../<service account name>-asdfas21112.json"
 
+# also:
+# gsutil -m cp -r "gs://bucketname/plots/" baseline
+
+
 # using default credentials
 from google.cloud import storage
 client = storage.Client()

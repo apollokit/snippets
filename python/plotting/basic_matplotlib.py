@@ -1,3 +1,7 @@
+
+# linestyles:  see https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -81,3 +85,17 @@ for icomponent, component in enumerate(['x', 'y', 'z']):
     ax.set_xlabel('time (s)')
     ax.set_ylabel(f'omega error {component}\n[deg/sec]')
     ax.grid()
+
+
+# for text and arrow
+ax.annotate('local max', xy=(3, 1),  xycoords='data',
+            xytext=(0.8, 0.95), textcoords='axes fraction',
+            arrowprops=dict(facecolor='black', shrink=0.05),
+            horizontalalignment='right', verticalalignment='top',
+            )
+
+
+# for just text
+#  see https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html
+#  see https://jakevdp.github.io/PythonDataScienceHandbook/04.09-text-and-annotation.html
+ax.text(1.0, 0.9, "converted B -> N", ha="right",transform=ax.transAxes)
