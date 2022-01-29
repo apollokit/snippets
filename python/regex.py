@@ -97,3 +97,31 @@ re_search(re_whitespace,'asdf  nliljioasfsdafio') # outputs 4
 re_non_whitespace = re.compile(r'\S')
 re_search(re_non_whitespace,'  nliljioasfsdafio') # outputs 2
 
+
+
+
+## replace
+
+thestr = '            "hovertemplate": "Index: dataset000000<br>Time (min): %{x}<br>Valid: %{y}",\n' \
+         '   "name": "dataset000000",\n'  \
+         '   "x":\n' \
+         '   [\n' \
+         '       0.0,\n' \
+         '       0.0333251953125,\n' \
+         '       0.066650390625,\n' \
+         '       0.0999755859375,\n' \
+         '       0.13330078125,\n' \
+         '       0.1666259765625,\n' \
+         '       0.199951171875,\n' \
+         '       0.2332763671875,\n' \
+         '       0.2666015625,\n' \
+         '       0.0000001953125,\n' \
+         '       0.300048828125,\n' \
+         '       0.333251953125,\n' \
+         '       0.36669921875,\n' \
+         '       0.39990234375,' 
+
+# truncate all >6 decimal place floats to only 6
+# note this will fuck up rul smol numbers like 0.0000001953125. that'll be 0.000000. 
+#   Not really a good way to test for that...
+out = re.sub(r'([0-9]\.[0-9]{6})[0-9]*,',r'\1', thestr)
