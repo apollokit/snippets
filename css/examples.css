@@ -1,0 +1,43 @@
+/* See https://www.w3schools.com/cssref/css_selectors.asp */
+
+/* select class */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* select every element with class="btn btn-outline-primary"
+    necessary here because there is a space in the class name*/ 
+[class="btn btn-outline-primary"] {
+    height: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+/* With
+  <div class="box">
+    <div>One</div>
+    <div>Two</div>
+    <div class="selected">Three</div>
+    <div>Four</div>
+  </div>
+*/
+.box {
+    display: flex;
+    align-items: flex-start;
+    height: 200px;
+    background-color: yellow;
+}
+/* all children */
+.box>* {
+  background-color: blue;
+}
+/* first child */
+.box>*:first-child {
+  align-self: stretch;
+}
+.box .selected {
+  align-self: center;
+}

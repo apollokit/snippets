@@ -1,5 +1,12 @@
 import pandas as pd
 
+
+# super simple dataframe
+x = [0, 1, 2, 3, 4]
+y = [10, 12, 10, 13, 13]
+df = pd.DataFrame(y, x)
+
+
 ## Constructing a dataframe from a bunch of price data, and writing to a csv
 # file
 
