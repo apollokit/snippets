@@ -20,3 +20,11 @@ np.where(a < 5, a, 10*a)
 with np.errstate(invalid='ignore'):
     thrust_force_N_convert[imc, itime, :] = np.matmul(
         rbk.MRP2C(sigma_BN[imc, itime, :]).T, force_b[:, itime])
+
+
+# Print array with full precision
+np.set_printoptions(precision=15)
+print(array)
+
+# print array with , separator
+np.array2string(array, separator=', ')

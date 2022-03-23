@@ -1,8 +1,14 @@
-#  see http://cis.bentley.edu/sandbox/wp-content/uploads/Documentation-on-f-strings.pdf
+# see https://python-reference.readthedocs.io/en/latest/docs/functions/format.html
 
 yo = 0.323432
 # print as float with two decimal places
 print(f'hey yo: {yo:0.2f}')
+
+
+yo = 234.23423
+# General format. Same as ‘g’ except switches to ‘E’ if the number gets too large. 
+# The representations of infinity and NaN are uppercased, too.
+print(f'hey yo: {yo:0.2G}')
 
 
 
