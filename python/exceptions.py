@@ -16,3 +16,6 @@ except Exception as e: # (as opposed to except Exception, e:)
     # see https://docs.python.org/3/library/traceback.html
     exc_type, exc_value, exc_traceback = sys.exc_info()
     traceback.print_exception(exc_type, exc_value, exc_traceback)
+
+    # print the full stack
+    traceback.print_stack()
