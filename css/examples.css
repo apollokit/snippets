@@ -38,6 +38,10 @@
 .box>*:first-child {
   align-self: stretch;
 }
+/* all <b> elements under element with id "logs" */
+#logs > b   { 
+  color: #ff0000;
+}
 .box .selected {
   align-self: center;
 }
