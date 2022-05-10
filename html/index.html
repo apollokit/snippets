@@ -17,5 +17,23 @@
 <a href="/Apps/tibro_viz/runner_custom_circle.html?inclination=99">99 degrees inclination,  36 satellites (6 satellites/6 planes)</a>
 <br>
 
+<!-- input form, using django -->
+<div id="filters">
+    <h2>Choose filters:</h2>
+    <form action=run_make_diff method="post">
+      <!-- hidden args that are needed for the POST method -->
+      <input type="hidden" id="dir" name="dir" value={{scenario.dir}} />
+      <input type="hidden" id="plot_type" name="plot_type" value={{plot_type}} />
+
+      <label style="color: white">Indices to include:</label>
+      <input type="text" id="filter_indices" size=10 name="filter_indices" placeholder="1-3,5-6,12" value={% if indices %}{{indices}}{% endif %}>
+      <label style="color: white">Time limits:</label>
+      <input type="text" id="filter_xlim" size=10 name="filter_xlim" placeholder="500,2000" value={% if xlim %}{{xlim}}{% endif %}>
+      <label style="color: white">Y limits:</label>
+      <input type="text" id="filter_ylim" size=10 name="filter_ylim" placeholder="50.0,150.0" value={% if ylim %}{{ylim}}{% endif %}>
+      <input type="submit" value="reload" style="background-color: #ff7900">
+    </form>
+</div>
+
 </body>
 </html>
