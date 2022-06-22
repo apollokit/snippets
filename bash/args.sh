@@ -18,6 +18,8 @@ arg_two=$2
 # make sure it's either "foo" or "bar"
 ( ! ( [ "$arg_two" == "foo" ] || [ "$arg_two" == "bar" ] ) ) && echo "arg_two must be 'foo' or 'bar'"
 
+# or to set a default value
+arg_two=${2:-"foo"}
 
 shift 2
 
