@@ -12,7 +12,6 @@ print(f'hey yo: {yo:0.2G}')
 
 
 
-
 # print out a well formatted block of text from a list
 
 wid = 12
@@ -31,3 +30,10 @@ for pos in self.positions:
 # AAPL        10          $134.84      $1,348.40    
 # ETH-USD     10          $379.48      $3,794.84    
 # DOGE-USD    10          $0.00        $0.03  
+
+
+
+# remove trailing 0s from a float number
+# from https://stackoverflow.com/a/2440786/4292910
+def float_format(val) -> str:
+    return f'{val}'.rstrip('0').rstrip('.')
