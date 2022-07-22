@@ -16,3 +16,10 @@ command &> file
 
 # redirect both standard output and standard error to grep
 command 2>&1 | grep ERROR
+
+# tee output
+# https://stackoverflow.com/a/418899/4292910
+# goes to both standard out and file
+ls -a | tee output.file
+# plus standard error
+ls -a 2>&1 | tee output.file
