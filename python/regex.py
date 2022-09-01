@@ -125,3 +125,17 @@ thestr = '            "hovertemplate": "Index: dataset000000<br>Time (min): %{x}
 # note this will fuck up rul smol numbers like 0.0000001953125. that'll be 0.000000. 
 #   Not really a good way to test for that...
 out = re.sub(r'([0-9]\.[0-9]{6})[0-9]*,',r'\1', thestr)
+
+
+
+
+### Replace string in file
+import re
+input = open(file_in_path)
+output = open(file_out_path, "w")
+
+for line in input:
+    output.write(re.sub(r'^OPTIMIZER_MAX_ITER = [0-9]*', f'OPTIMIZER_MAX_ITER = {opt_max_iter}', line))
+
+input.close()
+output.close()
