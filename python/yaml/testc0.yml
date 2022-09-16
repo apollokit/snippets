@@ -1,0 +1,10 @@
+---
+first: first element
+deep:
+    k1:
+        - 1
+        - 2
+    test1:
+        test3:
+            - 12
+            - 13

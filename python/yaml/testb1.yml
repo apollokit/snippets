@@ -1,0 +1,29 @@
+# note: this works...
+- &thething !include testb0.yml
+- value: overridden
+- hi: 
+  - *thething
+  - 112
+  - !include testb0.yml
+- also: !include testb0.yml
+
+# note:  ...but everything else below doesn't. Merging ("<<"") an included file 
+#  doesn't seem to be supported with pyyaml, shrug
+
+# - &thething !include testb0.yml
+# - <<: *thething
+#   value: overridden
+
+# - &thething !include testb0.yml
+# - <<: *thething
+#   value: overridden
+
+# - !include testb0.yml
+# # - !include testb0.yml
+# -  value: overridden
+
+# # -  value: overridden
+
+# - &base !include testb0.yml
+#   <<: *base
+#   value: overridden

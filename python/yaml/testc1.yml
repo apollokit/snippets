@@ -1,0 +1,14 @@
+---
+first: hi
+second: again {{ first }}
+deep:
+    k1:
+        - 4
+        - 6
+    k2:
+        - 3
+        - 6
+    test1:
+        test2:
+            - 14
+            - 15

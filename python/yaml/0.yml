@@ -1,0 +1,9 @@
+file1: !include 1.yml
+file2: !include 2.yml
+pee: &hip
+  tee: 2323
+  hee: 4343
+whay: 
+  <<: *hip
+  hee: whoa
+  
