@@ -6,7 +6,7 @@ from os import path
 import glob
 import inflection
 
-dir = '/Users/ktikennedy/starfish/Basilisk/basilisk_derived/src/Starfish/flightSoftware/sw_configuration/tug_config'
+dir = '/Users/ktikennedy/starfish/Basilisk/basilisk_derived/src/Starfish/sim_configuration/run_files'
 
 paths = [path.abspath(p) for p in glob.glob(path.join(dir, '**/*'), recursive=True)]
 
@@ -21,10 +21,20 @@ for ipat, pat in enumerate(paths):
     file_name = path.basename(pat)
 
     new_name = file_name
-    new_name = new_name.replace('softwareScenario', 'sw_scenario')
-    new_name = new_name.replace('software_scenario', 'sw_scenario')
-    new_name = new_name.replace('sws', 'sw_scenario')
-    new_name = new_name.replace('tugConfiguration', 'tugconfig')
+    # new_name = new_name.replace('softwareScenario', 'sw_scenario')
+    # new_name = new_name.replace('software_scenario', 'sw_scenario')
+    # new_name = new_name.replace('sws', 'sw_scenario')
+    # new_name = new_name.replace('tugConfiguration', 'tugconfig')
+    # new_name = new_name.replace('nav_configuration', 'navconfig')
+    # new_name = new_name.replace('scenario_', 'sim_scenario_')
+
+# if '_tarconfig' in new_name:
+    #     new_name = new_name.replace('_tarconfig', '')
+    #     new_name = 'sw_tarconfig_' + new_name
+    if '_simulation' in new_name:
+        new_name = new_name.replace('_simulation', '')
+    new_name = new_name.replace('run_', 'run_sim_')
+
     new_name = inflection.underscore(new_name)
     new_full_path = path.join(dir_path, new_name)
     
