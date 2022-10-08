@@ -44,7 +44,7 @@ cookie_pairs = re.findall(r"\S*=\S*?(?:;|$)", content)
 re.search(r'^\d{4}-\d{2}-\d{2}$', '2019-05-15')
 # returns <re.Match object; span=(0, 10), match='2019-05-15'>
 re.search(r'^\d{4}-\d{2}-\d{2}$', '2019-05-15g')
-# returns Noneright before the movie
+# returns None
 
 
 
