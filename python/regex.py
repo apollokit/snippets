@@ -139,3 +139,19 @@ for line in input:
 
 input.close()
 output.close()
+
+
+
+
+## Match either 'foo' or 'bar.*' or '.*highres.*'
+comp_exclude_list = [
+    'foo',
+    'bar.*',
+    '.*highres.*']
+comp_exclude_string = '|'.join(comp_exclude_list)
+
+print(re.search(comp_exclude_string, 'blah_highres'))  # outputs none
+
+
+# search for a string that does not start with 'proximity'
+print(re.search("^(?!proximity).*", 'aproximity'))  # outputs a match
