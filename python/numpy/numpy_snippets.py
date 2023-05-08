@@ -23,10 +23,13 @@ with np.errstate(invalid='ignore'):
 
 
 # Print array with full precision
+# np print
 # np format long
 # numpy format long
 # printoptions
-np.set_printoptions(precision=15)
+# print format long
+# np suppress scientific notation
+np.set_printoptions(precision=15, suppress=True)
 print(array)
 
 # print array with , separator
