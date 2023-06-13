@@ -57,4 +57,10 @@ static void test(uint64_t simTimeNanos, Eigen::Vector3d r_I)
     v = m.row(1);
     std::cout << "v: " << v << std::endl;
     std::cout << m * v;
+
+    // print with full precision
+    std::cout.precision(15);
+    std::cout << "pos_Pfix was: " << pos_Pfix.transpose() << std::endl;
+    // std::cout << "Returning zeros vector" << std::endl;
+    // return Eigen::Vector3d::Zero();
 }
