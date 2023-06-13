@@ -12,6 +12,8 @@ static std::string toString(const Eigen::MatrixXd& mat){
 static void test(uint64_t simTimeNanos, Eigen::Vector3d r_I)
 {
 
+    // printf("%llu", 285212672);
+
     // printf("GravBodyData::computeGravityInertial: %s: %.15f %.15f %.15f");
     // printf("Firing thruster");
     // printf("GravBodyData::computeGravityInertial: ri %s\n", toString(r_I).c_str());
