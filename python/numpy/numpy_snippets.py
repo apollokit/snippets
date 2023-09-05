@@ -29,7 +29,8 @@ with np.errstate(invalid='ignore'):
 # printoptions
 # print format long
 # np suppress scientific notation
-np.set_printoptions(precision=15, suppress=True)
+# linewidth infinite so it doesn't do automatic wrapping
+np.set_printoptions(precision=15, suppress=True, linewidth=np.inf)
 print(array)
 
 # print array with , separator
